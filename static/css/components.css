@@ -1,0 +1,82 @@
+/* ==================================
+   Priority/Analytics - Component Styles
+   Reusable UI components only.
+   No page-specific or app-specific styles.
+================================== */
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: 0.65rem 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn--primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.btn--primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: #ffffff;
+}
+
+.btn--secondary {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+.btn--secondary:hover {
+    border-color: var(--color-accent-hover);
+    color: var(--color-accent-hover);
+}
+
+/* ===== CARDS AND PANELS ===== */
+
+.card,
+.panel {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-panel);
+    padding: var(--space-24);
+}
+
+.card--accent-bottom,
+.panel--accent-bottom {
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.card--accent-sides,
+.panel--accent-sides {
+    border-left: 1px solid var(--color-accent);
+    border-right: 1px solid var(--color-accent);
+}
+
+/* ===== EMPTY STATES ===== */
+
+.empty-state {
+    color: var(--color-text-soft);
+    font-style: italic;
+}
