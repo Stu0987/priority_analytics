@@ -1,11 +1,10 @@
 <header class="site-header">
-
-    <div class="container site-header__inner">
+    <div class="site-header__inner">
 
         <div class="site-header__brand">
-            <span class="site-brand">
+            <a href="{% url 'main:landing_page' %}" class="site-brand">
                 Priority<span class="site-brand__accent">/Analytics</span>
-            </span>
+            </a>
         </div>
 
         <div class="site-header__context">
@@ -23,15 +22,53 @@
 
             <nav class="site-nav" aria-label="Primary navigation">
                 <ul class="site-nav__list">
-                    {# Navigation links will be added after main and users URLs exist. #}
+
+                    <li class="site-nav__item">
+                        <a href="{% url 'main:landing_page' %}#capabilities"
+                        class="site-nav__link">
+                            Capabilities
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="{% url 'main:landing_page' %}#workflow"
+                        class="site-nav__link">
+                            Workflow
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="{% url 'main:landing_page' %}#insight"
+                        class="site-nav__link">
+                            Insight
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="{% url 'main:landing_page' %}#direction"
+                        class="site-nav__link">
+                            Project Direction
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="{% url 'main:landing_page' %}#contact"
+                        class="site-nav__link">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
         </div>
 
         <div class="site-header__auth">
-            {# Authentication controls will be added after users URLs exist. #}
+            {% if user.is_authenticated %}
+                {# Logout control will be added when users authentication is built. #}
+            {% else %}
+                {# Login and Sign Up controls will be added when users authentication is built. #}
+            {% endif %}
         </div>
 
     </div>
-
 </header>

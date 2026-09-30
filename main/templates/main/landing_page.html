@@ -1,0 +1,218 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+{% block title %}Priority/Analytics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'main/css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="landing-page">
+
+    <section class="hero" id="hero">
+        <h1 class="hero-title">
+            Priority/Analytics
+        </h1>
+
+        <p class="hero-lead">
+            Priority/Analytics is an information and analytics platform focused on
+            data collection, monitoring, reporting, cybersecurity training, and
+            actionable insights.
+        </p>
+
+        <p class="hero-text">
+            The platform provides a hands-on environment for collecting, organizing,
+            and analyzing data while developing practical experience with data
+            pipelines, system monitoring, security telemetry, dashboards, and
+            analytical workflows.
+        </p>
+    </section>
+
+
+    <section class="landing-section" id="capabilities">
+        <h2 class="section-title">
+            Core Capabilities
+        </h2>
+
+        <div class="card-grid">
+
+            <article class="card">
+                <h3 class="card-title">
+                    Data Collection & Ingestion
+                </h3>
+
+                <p class="card-text">
+                    Collect, normalize, and organize data from external APIs,
+                    system telemetry, logs, and other sources for reliable
+                    downstream use.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Monitoring & Telemetry
+                </h3>
+
+                <p class="card-text">
+                    Observe system behavior, infrastructure activity,
+                    operational metrics, and security-relevant events
+                    through centralized data.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Analysis & Reporting
+                </h3>
+
+                <p class="card-text">
+                    Transform collected information into dashboards, trends,
+                    summaries, reports, and other useful analytical views.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Cybersecurity Training
+                </h3>
+
+                <p class="card-text">
+                    Provide a practical environment for developing skills in
+                    monitoring, log analysis, security telemetry, data
+                    interpretation, and investigative workflows.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+
+    <section class="landing-section" id="workflow">
+        <h2 class="section-title">
+            Platform Workflow
+        </h2>
+
+        <div class="card-grid">
+
+            <article class="card">
+                <h3 class="card-title">
+                    Data Sources
+                </h3>
+
+                <p class="card-text">
+                    APIs, system telemetry, logs, and other external inputs.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Ingestion & Processing
+                </h3>
+
+                <p class="card-text">
+                    Collect, normalize, validate, and prepare incoming data.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Structured Storage
+                </h3>
+
+                <p class="card-text">
+                    Store normalized information so it can be queried,
+                    compared, and reused.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">
+                    Dashboards, Monitoring & Analysis
+                </h3>
+
+                <p class="card-text">
+                    Present the data through useful views for observation,
+                    reporting, and analysis.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+
+    <section class="landing-section" id="insight">
+        <h2 class="section-title">
+            Operational & Security Insight
+        </h2>
+
+        <p class="section-lead">
+            Priority/Analytics is designed to turn collected data and telemetry
+            into useful operational context.
+        </p>
+
+        <p class="section-text">
+            Dashboards, historical data, reporting, and security-focused analysis
+            can be used to identify trends, observe system behavior, investigate
+            changes, and develop a clearer understanding of the environments being
+            monitored.
+        </p>
+    </section>
+
+
+    <section class="landing-section" id="direction">
+        <h2 class="section-title">
+            Project Direction
+        </h2>
+
+        <p class="section-lead">
+            Priority/Analytics is designed to grow into a practical, modular
+            platform for data analytics, monitoring, reporting, and
+            cybersecurity-focused exploration.
+        </p>
+
+        <p class="section-text">
+            Future development will expand the platform with new data sources,
+            dashboards, analytical tools, system telemetry, and security
+            integrations while maintaining a clean, maintainable architecture.
+        </p>
+    </section>
+
+
+    <section class="landing-section" id="contact">
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <div class="section-links">
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:stuart.d.drennan@gmail.com">
+                    stuart.d.drennan@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://linkedin.com/in/stuart-drennan"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    linkedin.com/in/stuart-drennan
+                </a>
+            </p>
+
+            <p>
+                <strong>GitHub Portfolio:</strong>
+                <a href="https://github.com/Stu0987"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    github.com/Stu0987
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+</section>
+{% endblock %}

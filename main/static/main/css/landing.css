@@ -1,0 +1,83 @@
+/* ==================================
+   Priority/Analytics - Landing Page Styles
+   Landing-page-specific presentation only.
+================================== */
+
+
+/* ===== LANDING PAGE ===== */
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+}
+
+
+/* ===== LANDING SECTIONS ===== */
+
+.landing-section {
+    padding: var(--space-32);
+    background: var(--color-panel-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-panel);
+}
+
+
+/* Preserve darker Workflow and Direction sections */
+
+#workflow,
+#direction {
+    background: var(--color-panel);
+}
+
+
+/* Preserve Insight accent border */
+
+#insight {
+    
+}
+
+
+/* ===== SECTION-SPECIFIC SPACING ===== */
+
+#capabilities .section-title,
+#workflow .section-title {
+    margin-bottom: var(--space-24);
+}
+
+
+/* ===== CARD GRID LAYOUT ===== */
+
+#capabilities .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#workflow .card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* ===== RESPONSIVE LANDING PAGE ===== */
+
+@media (max-width: 768px) {
+
+    #capabilities .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #workflow .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+
+    #workflow .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-section {
+        padding: var(--space-24);
+    }
+}
