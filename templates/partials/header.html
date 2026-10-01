@@ -23,40 +23,44 @@
             <nav class="site-nav" aria-label="Primary navigation">
                 <ul class="site-nav__list">
 
-                    <li class="site-nav__item">
-                        <a href="{% url 'main:landing_page' %}#capabilities"
-                        class="site-nav__link">
-                            Capabilities
-                        </a>
-                    </li>
+                    {% if user.is_authenticated %}
 
-                    <li class="site-nav__item">
-                        <a href="{% url 'main:landing_page' %}#workflow"
-                        class="site-nav__link">
-                            Workflow
-                        </a>
-                    </li>
+                    {% else %}
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:landing_page' %}#capabilities"
+                            class="site-nav__link">
+                                Capabilities
+                            </a>
+                        </li>
 
-                    <li class="site-nav__item">
-                        <a href="{% url 'main:landing_page' %}#insight"
-                        class="site-nav__link">
-                            Insight
-                        </a>
-                    </li>
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:landing_page' %}#workflow"
+                            class="site-nav__link">
+                                Workflow
+                            </a>
+                        </li>
 
-                    <li class="site-nav__item">
-                        <a href="{% url 'main:landing_page' %}#direction"
-                        class="site-nav__link">
-                            Project Direction
-                        </a>
-                    </li>
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:landing_page' %}#insight"
+                            class="site-nav__link">
+                                Insight
+                            </a>
+                        </li>
 
-                    <li class="site-nav__item">
-                        <a href="{% url 'main:landing_page' %}#contact"
-                        class="site-nav__link">
-                            Contact
-                        </a>
-                    </li>
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:landing_page' %}#direction"
+                            class="site-nav__link">
+                                Project Direction
+                            </a>
+                        </li>
+
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:landing_page' %}#contact"
+                            class="site-nav__link">
+                                Contact
+                            </a>
+                        </li>
+                    {% endif %}
 
                 </ul>
             </nav>
