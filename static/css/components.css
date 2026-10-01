@@ -169,7 +169,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.content-section__card{
+.content-section__card {
     background: var(--color-panel);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -177,6 +177,16 @@
     padding: var(--space-24);
     border-bottom: 3px solid var(--color-accent);
 
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.content-section__card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
 }
 
 .content-section__subtitle{
