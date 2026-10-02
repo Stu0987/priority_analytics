@@ -13,6 +13,9 @@
     --color-panel: #303e4a;
     --color-panel-soft: #384854;
 
+    /* Status */
+    --color-error: #e07a7a;
+
     --gradient-page: linear-gradient(
         135deg,
         var(--color-bg),

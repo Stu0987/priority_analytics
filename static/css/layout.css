@@ -4,6 +4,11 @@
     No page-specific, app-specific, or component-specific styles.
 ================================== */
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ===== CONTAINER ===== */
 
 .container {
@@ -14,6 +19,7 @@
 /* ===== MAIN CONTENT ===== */
 
 .site-main {
+    flex: 1;
     padding: var(--space-48) 0;
 }
 
@@ -43,6 +49,8 @@
 
 .site-header__auth {
     justify-self: end;
+    align-self: end;
+
     display: flex;
     align-items: center;
     gap: var(--space-8);

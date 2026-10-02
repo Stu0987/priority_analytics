@@ -1,0 +1,50 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+{% block title %}Logged Out | Priority/Analytics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/components.css' %}">
+<link rel="stylesheet" href="{% static 'users/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-panel">
+
+        <header class="auth-panel__header">
+            <h2 class="auth-panel__title">
+                Successfully Logged Out
+            </h2>
+
+            <p class="auth-panel__subtitle">
+                You have been signed out of your Priority/Analytics workspace.
+            </p>
+        </header>
+
+        <footer class="auth-panel__footer">
+            <p>
+                <a
+                    class="auth-panel__link"
+                    href="{% url 'users:login' %}"
+                >
+                    Log in again
+                </a>
+            </p>
+
+            <p>
+                Redirecting to the landing page in a few seconds.
+            </p>
+        </footer>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    window.setTimeout(() => {
+        window.location.replace("{% url 'main:landing_page' %}");
+    }, 3000);
+</script>
+{% endblock %}

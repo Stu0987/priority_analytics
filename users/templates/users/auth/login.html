@@ -1,0 +1,97 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+{% block title %}Login | Priority/Analytics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/components.css' %}">
+<link rel="stylesheet" href="{% static 'users/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-panel">
+
+        <header class="auth-panel__header">
+            <h2 class="auth-panel__title">Login</h2>
+
+            <p class="auth-panel__subtitle">
+                Sign in to access your Priority/Analytics workspace.
+            </p>
+        </header>
+
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="auth-form__errors">
+                    {% for error in form.non_field_errors %}
+                        <p class="auth-form__error">
+                            {{ error }}
+                        </p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% for field in form %}
+                <div class="auth-form__field">
+                    <label
+                        class="auth-form__label"
+                        for="{{ field.id_for_label }}"
+                    >
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="auth-form__errors">
+                            {% for error in field.errors %}
+                                <p class="auth-form__error">
+                                    {{ error }}
+                                </p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            {% if next %}
+                <input type="hidden" name="next" value="{{ next }}">
+            {% endif %}
+
+            <div class="auth-form__actions">
+                <button
+                    type="submit"
+                    class="auth-form__submit"
+                >
+                    Log In
+                </button>
+            </div>
+        </form>
+
+        <footer class="auth-panel__footer">
+            <p>
+                Don't have an account?
+                <a
+                    class="auth-panel__link"
+                    href="{% url 'users:signup' %}"
+                >
+                    Sign up here
+                </a>
+            </p>
+
+            <p>
+                Forgot your password?
+                <a
+                    class="auth-panel__link"
+                    href="{% url 'users:password_reset' %}"
+                >
+                    Reset it here
+                </a>
+            </p>
+        </footer>
+
+    </div>
+</section>
+{% endblock %}

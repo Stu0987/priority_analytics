@@ -1,0 +1,11 @@
+/* ==================================
+   Priority/Analytics - Auth Page Styles
+   Auth-page-specific presentation only.
+================================== */
+
+/* ==== Auth page ==== */
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+}

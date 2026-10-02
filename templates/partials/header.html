@@ -20,12 +20,20 @@
                 </p>
             {% endif %}
 
-            <nav class="site-nav" aria-label="Primary navigation">
-                <ul class="site-nav__list">
+            {% if user.is_authenticated %}
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <ul class="site-nav__list">
+                        <li class="site-nav__item">
+                            <a href="{% url 'main:home' %}" class="site-nav__link">
+                                Home
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-                    {% if user.is_authenticated %}
-
-                    {% else %}
+            {% elif show_landing_header %}
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <ul class="site-nav__list">
                         <li class="site-nav__item">
                             <a href="{% url 'main:landing_page' %}#capabilities"
                             class="site-nav__link">
@@ -60,17 +68,34 @@
                                 Contact
                             </a>
                         </li>
-                    {% endif %}
-
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
+            {% endif %}
         </div>
 
         <div class="site-header__auth">
             {% if user.is_authenticated %}
-                {# Logout control will be added when users authentication is built. #}
-            {% else %}
-                {# Login and Sign Up controls will be added when users authentication is built. #}
+                <a
+                    href="{% url 'users:logout' %}"
+                    class="site-header__auth-link"
+                >
+                    Logout
+                </a>
+
+            {% elif show_landing_header %}
+                <a
+                    href="{% url 'users:login' %}"
+                    class="site-header__auth-link"
+                >
+                    Log In
+                </a>
+
+                <a
+                    href="{% url 'users:signup' %}"
+                    class="site-header__auth-link"
+                >
+                    Sign Up
+                </a>
             {% endif %}
         </div>
 

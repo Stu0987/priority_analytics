@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Session / cookie security
+CSRF_COOKIE_SECURE = os.getenv("CSRF_COOKIE_SECURE") == "True"
+SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE") == "True"
+SESSION_COOKIE_HTTPONLY = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 300  # 5 minutes
 
 ROOT_URLCONF = 'config.urls'
 
@@ -140,3 +148,16 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+# User validation
+AUTH_USER_MODEL = "users.User"
+
+# Login requirements
+LOGIN_URL = "users:login"
+LOGIN_REDIRECT_URL = "main:home"
+LOGOUT_REDIRECT_URL = "main:landing_page"
+
+
+# Email / password reset
+DEFAULT_FROM_EMAIL = "noreply@priorityanalytics.local"

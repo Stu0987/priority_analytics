@@ -70,7 +70,9 @@
 
 /* ===== SITE HEADER - NAVIGATION ===== */
 
-.site-nav__link {
+.site-nav__link,
+.site-nav__link,
+.site-header__auth-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +90,9 @@
         transform 0.2s ease;
 }
 
-.site-nav__link:hover {
+.site-nav__link:hover,
+.site-nav__link:hover,
+.site-header__auth-link:hover {
     color: #ffffff;
     border-color: var(--color-accent);
     background-color: rgba(var(--color-accent-rgb), 0.14);
