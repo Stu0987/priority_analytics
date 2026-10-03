@@ -20,52 +20,65 @@
                 </p>
             {% endif %}
 
-            {% if user.is_authenticated %}
+            {% if show_landing_header %}
                 <nav class="site-nav" aria-label="Primary navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
-                            <a href="{% url 'main:home' %}" class="site-nav__link">
-                                Home
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-            {% elif show_landing_header %}
-                <nav class="site-nav" aria-label="Primary navigation">
-                    <ul class="site-nav__list">
-                        <li class="site-nav__item">
-                            <a href="{% url 'main:landing_page' %}#capabilities"
-                            class="site-nav__link">
+                            <a
+                                href="{% url 'main:landing_page' %}#capabilities"
+                                class="site-nav__link"
+                            >
                                 Capabilities
                             </a>
                         </li>
 
                         <li class="site-nav__item">
-                            <a href="{% url 'main:landing_page' %}#workflow"
-                            class="site-nav__link">
+                            <a
+                                href="{% url 'main:landing_page' %}#workflow"
+                                class="site-nav__link"
+                            >
                                 Workflow
                             </a>
                         </li>
 
                         <li class="site-nav__item">
-                            <a href="{% url 'main:landing_page' %}#insight"
-                            class="site-nav__link">
+                            <a
+                                href="{% url 'main:landing_page' %}#insight"
+                                class="site-nav__link"
+                            >
                                 Insight
                             </a>
                         </li>
 
                         <li class="site-nav__item">
-                            <a href="{% url 'main:landing_page' %}#direction"
-                            class="site-nav__link">
+                            <a
+                                href="{% url 'main:landing_page' %}#direction"
+                                class="site-nav__link"
+                            >
                                 Project Direction
                             </a>
                         </li>
 
                         <li class="site-nav__item">
-                            <a href="{% url 'main:landing_page' %}#contact"
-                            class="site-nav__link">
+                            <a
+                                href="{% url 'main:landing_page' %}#contact"
+                                class="site-nav__link"
+                            >
                                 Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            {% elif user.is_authenticated %}
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <ul class="site-nav__list">
+                        <li class="site-nav__item">
+                            <a
+                                href="{% url 'main:home' %}"
+                                class="site-nav__link"
+                            >
+                                Home
                             </a>
                         </li>
                     </ul>

@@ -12,7 +12,11 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils.http import url_has_allowed_host_and_scheme
 
-from .forms import CustomAuthenticationForm, CustomUserCreationForm
+from .forms import (
+    CustomAuthenticationForm,
+    CustomPasswordChangeForm,
+    CustomUserCreationForm,
+)
 
 
 def signup(request):
@@ -123,6 +127,7 @@ class CustomPasswordResetCompleteView(PasswordResetCompleteView):
 
 class CustomPasswordChangeView(PasswordChangeView):
     template_name = "users/auth/password_change_form.html"
+    form_class = CustomPasswordChangeForm
     success_url = reverse_lazy("users:password_change_done")
 
     extra_context = {
@@ -134,6 +139,6 @@ class CustomPasswordChangeDoneView(PasswordChangeDoneView):
     template_name = "users/auth/password_change_done.html"
 
     extra_context = {
-        "header_title": "Priority Labs | Password Changed",
+        "header_title": "Priority Labs | Password Updated",
         "header_subtitle": "Data Analytics • Monitoring • Cybersecurity Training",
     }
