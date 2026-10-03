@@ -32,4 +32,9 @@ def custom_logout(request):
 
 @login_required
 def profile(request):
-    return render(request, "users/account/profile.html")
+    context = {
+        "header_title": "Priority Labs | Profile",
+        "header_subtitle": "Data Analytics • Monitoring • Cybersecurity Training",
+    }
+
+    return render(request, "users/account/profile.html", context)

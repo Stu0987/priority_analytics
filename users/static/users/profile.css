@@ -1,0 +1,114 @@
+/* ==================================
+   Priority/Analytics - Profile Page
+   Profile-specific styles only.
+================================== */
+
+
+/* ==== Profile page ==== */
+
+.profile-page {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ==== Profile panel ==== */
+
+.profile-panel {
+    width: min(100%, 42rem);
+    padding: var(--space-32);
+
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-panel);
+}
+
+/* ==== Profile header ==== */
+
+.profile-panel__header {
+    margin-bottom: var(--space-24);
+    text-align: center;
+}
+
+.profile-panel__title {
+    margin-bottom: var(--space-12);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+.profile-panel__subtitle {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* ==== Profile details ==== */
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+
+    margin: 0;
+}
+
+.profile-details__item {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: var(--space-16);
+    align-items: center;
+
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.profile-details__label {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.profile-details__value {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/* ==== Profile actions ==== */
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-16);
+
+    margin-top: var(--space-24);
+}
+
+.profile-actions__link {
+    padding: var(--space-12) var(--space-24);
+
+    color: var(--color-bg);
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-actions__link:hover {
+    color: var(--color-bg);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.profile-actions__link:focus-visible {
+    outline: 2px solid var(--color-accent-hover);
+    outline-offset: 2px;
+}

@@ -1,0 +1,74 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+{% block title %}Profile | Priority/Analytics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="profile-page">
+    <div class="profile-panel">
+
+        <header class="profile-panel__header">
+            <h2 class="profile-panel__title">
+                Profile
+            </h2>
+
+            <p class="profile-panel__subtitle">
+                Review your account details and manage your access settings.
+            </p>
+        </header>
+
+        <dl class="profile-details">
+            <div class="profile-details__item">
+                <dt class="profile-details__label">
+                    Username:
+                </dt>
+
+                <dd class="profile-details__value">
+                    {{ user.username }}
+                </dd>
+            </div>
+
+            <div class="profile-details__item">
+                <dt class="profile-details__label">
+                    Email:
+                </dt>
+
+                <dd class="profile-details__value">
+                    {{ user.email }}
+                </dd>
+            </div>
+
+            <div class="profile-details__item">
+                <dt class="profile-details__label">
+                    Date Joined:
+                </dt>
+
+                <dd class="profile-details__value">
+                    {{ user.date_joined }}
+                </dd>
+            </div>
+        </dl>
+
+        <div class="profile-actions">
+            <a
+                href="{% url 'users:password_change' %}"
+                class="profile-actions__link"
+            >
+                Change Password
+            </a>
+
+            <a
+                href="{% url 'users:logout' %}"
+                class="profile-actions__link profile-actions__link--danger"
+            >
+                Logout
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
