@@ -14,7 +14,8 @@ def landing_page(request):
 @login_required
 def home(request):
     context = {
-            "header_title": "Home | Priority/Analytics",
-            "header_subtitle": "Dashboard foundation",
-        }
+        "header_title": "Priority Labs | Analytics Platform",
+        "header_subtitle": f"Welcome back, {request.user.username}",
+    }
+
     return render(request, "main/home.html", context)
